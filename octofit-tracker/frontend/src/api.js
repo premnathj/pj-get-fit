@@ -20,7 +20,10 @@ export function getResourceItems(payload) {
 }
 
 export async function fetchResource(resource, signal) {
-  const response = await fetch(resourceUrl(resource), { signal })
+  const endpoint = resource.startsWith('/') || resource.startsWith('http')
+    ? resource
+    : resourceUrl(resource)
+  const response = await fetch(endpoint, { signal })
   if (!response.ok) throw new Error(`Request failed with status ${response.status}`)
   return response.json()
 }

@@ -1,13 +1,17 @@
 import { useEffect, useState } from 'react'
 import { fetchResource, getResourceItems } from '../api.js'
 
+const activitiesEndpoint = import.meta.env.VITE_CODESPACE_NAME
+  ? `https://${import.meta.env.VITE_CODESPACE_NAME}-8000.app.github.dev/api/activities/`
+  : '/api/activities/'
+
 export default function Activities() {
   const [activities, setActivities] = useState([])
   const [error, setError] = useState('')
 
   useEffect(() => {
     const controller = new AbortController()
-    fetchResource('activities', controller.signal).then((payload) => setActivities(getResourceItems(payload))).catch((reason) => {
+    fetchResource(activitiesEndpoint, controller.signal).then((payload) => setActivities(getResourceItems(payload))).catch((reason) => {
       if (reason.name !== 'AbortError') setError(reason.message)
     })
     return () => controller.abort()
