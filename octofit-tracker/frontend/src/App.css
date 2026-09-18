@@ -1,0 +1,59 @@
+:root {
+  --ink: #17241f;
+  --muted: #718078;
+  --line: #dce5dd;
+  --paper: #f4f7f2;
+  --surface: #ffffff;
+  --lime: #d9f36a;
+  --coral: #f17f69;
+  --shadow: 0 18px 50px rgba(35, 62, 45, 0.09);
+  font-family: Georgia, 'Times New Roman', serif;
+  color: var(--ink);
+  background: var(--paper);
+}
+
+* { box-sizing: border-box; }
+body { margin: 0; min-width: 320px; }
+button, a { font: inherit; }
+.app-shell { min-height: 100vh; background: radial-gradient(circle at 86% 4%, #e6f4c2 0, transparent 26rem), var(--paper); }
+.topbar { display: flex; align-items: center; justify-content: space-between; gap: 2rem; max-width: 1240px; margin: auto; padding: 1.4rem 2.5rem; border-bottom: 1px solid var(--line); }
+.brand { display: inline-flex; align-items: center; gap: .65rem; color: var(--ink); text-decoration: none; font-size: 1.25rem; letter-spacing: -.03em; white-space: nowrap; }
+.brand img { width: 34px; height: 34px; object-fit: contain; }
+.brand b { font-weight: 400; color: var(--coral); }
+nav { display: flex; gap: .3rem; flex-wrap: wrap; justify-content: flex-end; }
+.nav-link { padding: .55rem .8rem; color: var(--muted); text-decoration: none; font: 700 .72rem/1.2 Arial, sans-serif; text-transform: uppercase; letter-spacing: .08em; border-radius: 99px; }
+.nav-link:hover, .nav-link.active { color: var(--ink); background: var(--lime); }
+.page-content { max-width: 1240px; margin: auto; padding: 5.5rem 2.5rem 6rem; }
+.resource-page { animation: enter .5s ease both; }
+.eyebrow, .card-index { margin: 0 0 .9rem; color: var(--coral); font: 700 .7rem/1.2 Arial, sans-serif; letter-spacing: .13em; text-transform: uppercase; }
+.page-heading { display: flex; align-items: end; justify-content: space-between; margin-bottom: 2.5rem; }
+h1 { margin: 0; font-size: clamp(3.2rem, 8vw, 6.5rem); font-weight: 400; line-height: .88; letter-spacing: -.075em; }
+h2 { margin: 0 0 .65rem; font-size: 1.5rem; font-weight: 400; line-height: 1; }
+.muted { display: block; color: var(--muted); font: .78rem/1.5 Arial, sans-serif; }
+.table-wrap { overflow-x: auto; background: var(--surface); border: 1px solid var(--line); box-shadow: var(--shadow); }
+table { width: 100%; border-collapse: collapse; text-align: left; }
+th, td { padding: 1.25rem 1.5rem; border-bottom: 1px solid var(--line); }
+th { color: var(--muted); font: 700 .68rem Arial, sans-serif; letter-spacing: .12em; text-transform: uppercase; }
+td { font: .95rem Arial, sans-serif; }
+tr:last-child td { border-bottom: 0; }
+.leaderboard-list { max-width: 760px; border-top: 1px solid var(--ink); }
+.leaderboard-row { display: grid; grid-template-columns: 4rem 1fr auto; align-items: center; gap: 1rem; padding: 1.35rem 0; border-bottom: 1px solid var(--line); }
+.rank { color: var(--coral); font-size: 1.7rem; }
+.leaderboard-row strong { display: block; margin-bottom: .2rem; font-size: 1.2rem; font-weight: 400; }
+.leaderboard-row > b { font-size: 1.25rem; font-weight: 400; }
+.leaderboard-row small { color: var(--muted); font: .7rem Arial, sans-serif; }
+.card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1rem; }
+.resource-card { min-height: 210px; padding: 1.5rem; display: flex; flex-direction: column; justify-content: space-between; background: var(--surface); border: 1px solid var(--line); box-shadow: var(--shadow); }
+.resource-card p { margin: 0 auto 1.5rem 0; max-width: 28rem; color: var(--muted); font: .9rem/1.55 Arial, sans-serif; }
+.empty-state { padding: 2rem; color: var(--muted); background: #fff; font: .9rem Arial, sans-serif; }
+.error { padding: 1rem; color: #8d392c; background: #ffe6df; font: .85rem Arial, sans-serif; }
+@keyframes enter { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+@media (max-width: 720px) {
+  .topbar { align-items: flex-start; flex-direction: column; padding: 1rem 1.25rem; gap: 1rem; }
+  nav { justify-content: flex-start; }
+  .nav-link { padding: .45rem .55rem; font-size: .64rem; }
+  .page-content { padding: 3.5rem 1.25rem 4rem; }
+  .page-heading { margin-bottom: 1.75rem; }
+  h1 { font-size: 4rem; }
+  th, td { padding: 1rem; white-space: nowrap; }
+}

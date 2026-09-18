@@ -1,0 +1,12 @@
+{
+  "name": "octofit-tracker",
+  "private": true,
+  "scripts": {
+    "dev": "concurrently --kill-others-on-fail --names api,web \"npm --prefix octofit-tracker/backend run dev\" \"npm --prefix octofit-tracker/frontend run dev --\"",
+    "build": "npm --prefix octofit-tracker/frontend run build",
+    "lint": "npm --prefix octofit-tracker/frontend run lint"
+  },
+  "devDependencies": {
+    "concurrently": "^10.0.5"
+  }
+}
