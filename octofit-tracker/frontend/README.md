@@ -1,4 +1,13 @@
-# React + Vite
+# Octofit Tracker frontend
+
+The presentation tier is a React 19/Vite app. Define the Codespaces name before running the app so API requests use the public backend URL:
+
+```dotenv
+# octofit-tracker/frontend/.env.local
+VITE_CODESPACE_NAME=your-codespace-name
+```
+
+The app requests resources from `https://${import.meta.env.VITE_CODESPACE_NAME}-8000.app.github.dev/api/[component]/`. When `VITE_CODESPACE_NAME` is unset, it safely falls back to `/api/[component]/` instead of constructing an `undefined` hostname.
 
 This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
 
