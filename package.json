@@ -1,0 +1,9 @@
+{
+  "name": "octofit-tracker",
+  "private": true,
+  "scripts": {
+    "dev": "npm --prefix octofit-tracker/frontend run dev --",
+    "build": "npm --prefix octofit-tracker/frontend run build",
+    "lint": "npm --prefix octofit-tracker/frontend run lint"
+  }
+}
