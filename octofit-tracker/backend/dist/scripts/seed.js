@@ -59,9 +59,9 @@ async function seedDatabase() {
         ]);
         await Leaderboard.create([
             { userId: users[0]._id, points: 135, rank: 1 },
-            { userId: users[1]._id, points: 80, rank: 2 },
+            { userId: users[3]._id, points: 120, rank: 2 },
             { userId: users[2]._id, points: 95, rank: 3 },
-            { userId: users[3]._id, points: 120, rank: 4 },
+            { userId: users[1]._id, points: 80, rank: 4 },
         ]);
         await Workout.create([
             {
